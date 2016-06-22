@@ -37,6 +37,9 @@ data['MORPHOLOGY_EJECTA_1'] = data['MORPHOLOGY_EJECTA_1'].replace(' ',numpy.NaN)
 morphofinterest = ['Rd','SLEPS','SLERS']
 data = data.loc[data['MORPHOLOGY_EJECTA_1'].isin(morphofinterest)]
 
+#We now look at our data now that we've extracted the data we wish to use
+data.describe()
+
 #Because of the bug in seaborn plotting, we now extract the data from the original data frame as arrays and make a new data frame
 latitude = numpy.array(data['LATITUDE_CIRCLE_IMAGE'])
 diameter = numpy.array(data['DIAM_CIRCLE_IMAGE'])
